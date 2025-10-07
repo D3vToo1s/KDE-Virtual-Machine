@@ -1,0 +1,20 @@
+{
+  "name": "Ubuntu KDE Codespace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {}
+    }
+  },
+  "forwardPorts": [5900],
+  "portsAttributes": {
+    "5900": {
+      "label": "KDE Desktop (VNC)",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "start-vnc.sh &"
+}
