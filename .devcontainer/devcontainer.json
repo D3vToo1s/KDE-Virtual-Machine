@@ -1,20 +1,19 @@
 {
-  "name": "Ubuntu KDE Codespace",
+  "name": "KDE Neon Desktop",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "customizations": {
-    "vscode": {
-      "settings": {}
-    }
-  },
-  "forwardPorts": [5900],
+  "forwardPorts": [6080],
   "portsAttributes": {
-    "5900": {
-      "label": "KDE Desktop (VNC)",
+    "6080": {
+      "label": "KDE Neon Desktop (noVNC)",
       "onAutoForward": "openBrowser"
     }
   },
-  "remoteUser": "vscode",
-  "postCreateCommand": "start-vnc.sh &"
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.live-server"]
+    }
+  }
 }
